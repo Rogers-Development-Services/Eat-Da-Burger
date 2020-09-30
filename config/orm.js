@@ -1,4 +1,4 @@
-const connection = require("./connection");
+const connection = require("./connection.js");
 
 let tableName = "burgers";
 
@@ -18,7 +18,7 @@ let orm = {
         let routeName = burger.burger_name.replace(/\s+/g, "").toLowerCase();
         console.log(routeName);
 
-        let insert = "INSERT INTO " + tableName + " (routeName, burger_name, devoured) VALUES (?,?,?)";
+        let insert = "INSERT INTO " + tableName + "(routeName, burger_name, devoured) VALUES (?,?,?)";
 
         connection.query(
            insert,
@@ -28,16 +28,16 @@ let orm = {
                callback(data);
            });
     },
-
+// Do I need to pass in devoured?
     updateOne: function(burger, callback) {
         let routeName = burger.burger_name.replace(/\s+/g, "").toLowerCase();
         console.log(routeName);
 
-        let update = //????
+        let update = "UPDATE" + tableName + "SET" + "(burger_name, devoured) VALUES (?,?)";
 
         connection.query(
            update,
-           [queryParameters],
+           [burger.burger_name, burger.devoured],
            function(error, data) {
                if(error) throw error;
                callback(data);

@@ -42,15 +42,17 @@ router.get("/", function (request, response) {
 });
 
 router.post("/api/burgers", function(request, response) {
+    console.log("POST request", request.body); 
     burger.insertOne()
     .then(function (data) {
         let burgers = {
             burgers: data
         };
-        request.render("index", burgers);
+        console.log("POST burger obj information: ", burgers)
+        response.render("index", burgers);
     })
     .catch(function (error) {
-        console.log("Inside of catch from POST controller: " + JSON.stringify(error));
+        console.log("Inside of catch from POST controller: " + error);
     })
 })
 

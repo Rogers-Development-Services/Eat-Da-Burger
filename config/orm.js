@@ -1,4 +1,5 @@
 const { response } = require("express"); ///ghost express
+const burger = require("../models/burger.js");
 const connection = require("./connection.js");
 
 let tableName = "burgers";
@@ -34,6 +35,7 @@ let orm = {
             let insert = "INSERT INTO " + tableName + "(burger_name, devoured) VALUES (?,?)";
             connection.query(
                 insert,
+
                 function (error, data) {
                     console.log("orm.js INSERT data: ", data);
                     if (error) reject(error);

@@ -1,11 +1,9 @@
 const orm = require("../config/orm");
 
-const burger = {
-  selectAll: function (callback) {
-    orm.selectAll("burgers", function (response) {
-      callback(response);
-    });
-  },
+const burger = { //burger.selectAll returns a promise, and this is what it looks like
+  selectAll: function () { //stuffing the response/promise into a variable called burger
+    return orm.selectAll("burgers")
+  }
 
   // selectAll: function () {
   //   return new Promise(function (resolve, reject) {
@@ -19,11 +17,12 @@ const burger = {
   //       });
   //   });
   // },
-  //   create: function (cols, vals, callback) {
-  //     orm.insertOne("burgers", cols, vals, function (res) {
-  //       callback(res);
-  //     });
-  //   },
+    // insertOne: function (cols, vals, callback) {
+    //   orm.insertOne("burgers", cols, vals, function (response) {
+    //     console.log(response);
+    //     callback(response);
+    //   });
+    // },
   //   update: function (objColVals, condition, callback) {
   //     orm.updateOne("burgers", objColVals, condition, function (res) {
   //       callback(res);

@@ -1,8 +1,8 @@
 <h1>Eat-Da-Burger!</h1>
 
-<form class="create-form">
+<form class="create-form" method="POST" action="/api/burgers">
 
-    <h2>Burgers to be devoured!</h2>
+    <h2>Burgers to be Devoured!</h2>
 
     <ul>
         {{#each burgers}}
@@ -25,7 +25,8 @@
 
     <div class="form-group">
         <label for="burger">Burger</label><br>
-        <input type="text" name="burger">
+        <input type="text" name="burger"> 
+        {{!-- Match what your sending and recieving i.e. (buger or burger_name) --}}
 
     </div>
 

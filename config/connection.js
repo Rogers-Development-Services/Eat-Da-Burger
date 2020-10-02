@@ -1,4 +1,5 @@
 const mysql = require('mysql');
+const util = require('util');
 
 const connectionConfig = {
     host: "localhost",
@@ -17,5 +18,7 @@ connection.connect(function (err) {
     }
     console.log(`connected as id  ${connection.threadId}`);
 });
+
+// connection.query = util.promisify(connection.query);
 
 module.exports = connection;

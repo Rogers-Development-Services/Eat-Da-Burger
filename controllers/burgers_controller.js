@@ -21,10 +21,7 @@ router.post("/api/burgers", function (request, response) {
     console.log("POST request", request.body);
     burger.insertOne(request.body)
         .then(function (result) {
-            console.log(result.affectedRows + " " + `${request.body.name}` + " burger inserted!");
-            //     let burgers = {
-            //         burgers: data
-            //     };
+            console.log(result.affectedRows + " " + `${request.body.name}` + " inserted!");
             // console.log("POST burger obj information: ", burgers)
             // response.render("index", data);
             response.status(200).redirect("/");
@@ -35,13 +32,12 @@ router.post("/api/burgers", function (request, response) {
 });
 
 router.put("/api/burgers/:id", function (request, response) {
-    console.log("PUT request", JSON.stringify(request.body));
-    console.log("Request Params from PUT request: ", request.params);
-    console.log("id: ", request.params.id);
-    console.log("devoured: ", request.params.devoured);
+    // console.log("Request Params from PUT request: ", request.params);
+    // console.log("id: ", request.params.id);
     burger.updateOne(request.params)  //this id is being drawn from the url, not a body object
         .then(function (result) {
-            console.log("put result: ", result);
+            // console.log("put result: ", result);
+            console.log(result.affectedRows + " " + " devoured!");
             response.status(200).end();
             // response.render("index", result);
         })

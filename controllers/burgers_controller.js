@@ -3,57 +3,51 @@ const router = express.Router();
 
 const burger = require("../models/burger.js");
 
-// router.get("/", function (request, response) {
-//     burger.selectAll(function (data) {
-//         let burgers = {
-//             burgers: data
-//         };
-//         console.log(burgers);
-//         response.render("index", burgers);
-//     })
-// });
-
-// router.post("/api/burgers", function(request, response) {
-//     console.log(request.body);
-//     burger.insertOne(
-//         ["burger_name"], //decorates for the column names to be specified
-//         [request.body.burger], //gives value
-//         function(result) {
-//       // Send back the ID of the new burger
-//       response.json({ id: result.insertId });
-//     });
-//   });
-
 router.get("/", function (request, response) {
     // This takes the promise containing the object array of burger information to set up a .then() to pass that information into my view template as another promise 
-    burger.selectAll() 
-        .then(function (data) {
-            let burgers = {
-                burgers: data
-            };
+    burger.selectAll()
+        .then(function (result) {
             //loging this to make sure it matches with data being inserted into my MYSQL promise in my orm.js file.
-            // console.log("controller data: ", data); 
+            // console.log("controller data: ", burgers[0].id); 
             //this will respond to my view template with the "burgers" object containing all of my MYSQL information.
-            response.render("index", burgers);
+            response.render("index", { burgers: result });
         })
         .catch(function (error) {
-            console.log("Inside of catch from GET controller: " + JSON.stringify(error));
+            console.log("Inside of catch from GET controller: " + (error));
         })
 });
 
-router.post("/api/burgers", function(request, response) {
-    console.log("POST request", request.body); 
-    burger.insertOne()
-    .then(function (data) {
-        let burgers = {
-            burgers: data
-        };
-        console.log("POST burger obj information: ", burgers)
-        response.render("index", burgers);
-    })
-    .catch(function (error) {
-        console.log("Inside of catch from POST controller: " + error);
-    })
+router.post("/api/burgers", function (request, response) {
+    console.log("POST request", request.body);
+    burger.insertOne(request.body)
+        .then(function (result) {
+            console.log(result.affectedRows + " " + `${request.body.name}` + " burger inserted!");
+            //     let burgers = {
+            //         burgers: data
+            //     };
+            // console.log("POST burger obj information: ", burgers)
+            // response.render("index", data);
+            response.status(200).redirect("/");
+        })
+        .catch(function (error) {
+            console.log("Inside of catch from POST controller: " + error);
+        })
+});
+
+router.put("/api/burgers/:id", function (request, response) {
+    console.log("PUT request", JSON.stringify(request.body));
+    console.log("Request Params from PUT request: ", request.params);
+    console.log("id: ", request.params.id);
+    console.log("devoured: ", request.params.devoured);
+    burger.updateOne(request.params)  //this id is being drawn from the url, not a body object
+        .then(function (result) {
+            console.log("put result: ", result);
+            response.status(200).end();
+            // response.render("index", result);
+        })
+        .catch(function (error) {
+            console.log("Inside of catch from PUT controller: " + error);
+        })
 })
 
 module.exports = router;

@@ -95,9 +95,13 @@ This application is a work in progress, future updates will include:
 
 Share with us with any comments or questions to help us grow! 
 
-GitHub Portfolio: [Rogers-Development-Services]https://github.com/Rogers-Development-Services/Portfolio)
+GitHub Profile: 
+[Rogers-Development-Services](https://www.github.com/Rogers-Development-Services)
+[Portfolio](https://rogers-development-services.github.io/Portfolio/index.html)
 
-Email: [matthew.shane.rogers@gmail.com](matthew.shane.rogers@gmail.com)
+
+Email: 
+[matthew.shane.rogers@gmail.com](matthew.shane.rogers@gmail.com)
 
 ## Credits
 

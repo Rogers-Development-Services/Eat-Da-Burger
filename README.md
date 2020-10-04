@@ -4,6 +4,8 @@
 
 This Heroku DB application wil create a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). (It is designed via the MVC design pattern)
 
+Here is the [deployed application](https://nameless-mountain-99722.herokuapp.com/).
+
 ## Table of Contents
 [Deployed Application](https://github.com/Rogers-Development-Services/EAT-DA-BURGER#deployed-application)
 

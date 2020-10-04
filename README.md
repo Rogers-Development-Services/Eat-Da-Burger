@@ -106,4 +106,4 @@ Code template provided by Trilogy Education
 Thanks to [Steven Jirjis](https://www.linkedin.com/in/stevenjirjis/), [Chris Stead](https://github.com/cmstead), and [Andrew Kil](https://github.com/andrew-kil) for troubleshooting and debugging assistance.
 
 ## Licenses
-Licensed under the GNU General Public License v3.0,MIT License lincense(s).
+Licensed under the MIT License lincense.

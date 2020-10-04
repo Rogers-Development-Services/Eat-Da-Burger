@@ -1,10 +1,8 @@
 # EAT-DA-BURGER
 
-![GitHub license](https://img.shields.io/badge/license-GNU%20General%20Public%20License%20v3.0-green.svg) ![GitHub license](https://img.shields.io/badge/license-MIT%20License-green.svg) 
+![License: MIT](https://img.shields.io/badge/license-MIT%20License-blue.svg) ![badge: Made With-JavaScript](https://img.shields.io/badge/Made%20With-JavaScript-Yellow)! ![badge: Uses-express-handlebars](https://img.shields.io/badge/Uses-express--handlebars-red) ![badge: Uses-MySQL](https://img.shields.io/badge/Uses-MySQL-orange)
 
-For a busy business owner who needs an effective **C**ontent **M**anagement **S**ystem (**CRM**) to view and manage your buisness's database, look no further!
-
-This Node CLI application will enable users to view, add, and update employees, roles, and departments within a buisness. This application will allow any user to manage your company's employees using MYSQL, the Inquirer NPM package, and Node.js as a backend framework.
+This Heroku DB application wil create a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). (It is designed via the MVC design pattern)
 
 ## Table of Contents
 [Deployed Application](https://github.com/Rogers-Development-Services/EAT-DA-BURGER#deployed-application)
@@ -14,8 +12,6 @@ This Node CLI application will enable users to view, add, and update employees, 
 [Usage](https://github.com/Rogers-Development-Services/EAT-DA-BURGER#usage)
 
 [Screenshots](https://github.com/Rogers-Development-Services/EAT-DA-BURGER#screenshots)
-
-[Videos](https://github.com/Rogers-Development-Services/EAT-DA-BURGER#videos)
 
 [Testing](https://github.com/Rogers-Development-Services/EAT-DA-BURGER#testing)
 
@@ -31,13 +27,13 @@ This Node CLI application will enable users to view, add, and update employees, 
 
 Here is an example of our app in action: 
 
-![Good README.md Generator](./Assets/img/EAT-DA-BURGER-GIF.gif)
+![EAT-DA-BURGER!](./public/assets/img/burger.gif)
 
 ## Installation
 
-Download this package, open your command line interface and run npm install. This should install the following dependencies aswell: express, path, and moment. If for some reason, you need to install the dependencies individually run npm install "dependency_name".
+Download this package, open your command line interface and run npm install. This should install the following dependencies aswell: Express and MySQL. If for some reason, you need to install the dependencies individually run npm install "dependency_name".
 
-Next run the following command to start the app: "node index.js"
+Next run the following command to install the app: 
 
 ```bash
 npm install 
@@ -47,26 +43,29 @@ npm install
 npm install express
 ```
 
+Note: This app is run on a Heroku server, it is not necessary to download.
+
 ## Usage 
 
-The application will deploy a employee tracker application in a CLI application. Begin by typing "npm start". 
+If you have downloaded the repository and have cloned the package to your machine, and have installed all dependencies, begin by typing "npm start". 
 
 ```bash
 npm start 
 ```
 
-Next, press the down or up arrow keys to scroll to choices with the corresponding action of your choice and press enter. Follow the prompt instructions to enter in details about your department, role, or employee. When ready to input your information, press ENTER.
+(The following directions apply to running the application on Heroku)
 
-Note: When updating role and you are prompted for a salary value, don't use the "$", just the number value. Also, when viewing all employees or adding a new employee, the "null" manager stands for an employee having no manager. Furthermore, currently there are only two managers, Chris Roque and Lorrey Talbet.
+Next, will see two sections on the page divided by the headings "Burgers Available!" and "Burgers Eaten!". If you don't see any specific burgers on the screen you just need to add one! 
+
+Navigate your cursor to the form below "Burger Name", click inside the field and write out your prefered burger. Then click the "Order Burger" Button and you will see it appear underneath the first section "Burgers Available!". 
+
+If you want to devour a burger, simiply click on the "DEVOUR IT!" Button next to the burger name and the burger will move into the eaten category.
+
+Note: When adding burgers, please only add one burger name per each order.
 
 ### Screenshots
 
-![Deployed Application](https://user-images.githubusercontent.com/38272211/94357257-24368780-004c-11eb-817d-23735424c941.JPG)
-
-### Videos
-
-[![Video Tutorial](https://img.youtube.com/vi/se_b6BkXqQU/0.jpg)](https://www.youtube.com/watch?v=se_b6BkXqQU)
-
+![Deployed Application](https://user-images.githubusercontent.com/38272211/95003762-5d647f80-0597-11eb-9f07-3575ac4d702b.JPG)
 
 ## Testing
 
@@ -82,10 +81,13 @@ npm test
 
 ## Future Updates
 This application is a work in progress, future updates will include: 
-1. 
+1. Added CSS styling
+2. Add Bootstrap Grid Layout
 2. Provide functionality for:
-    * 
-3. 
+    * Limiting amount of burgers to be ordered
+    * Validate characters used for typing burger name to only include upper or lowercase strings with spacing
+    * Adding protection of API keys in Node with environment variables
+3. General Refactoring
 
 ## Questions
 
@@ -99,7 +101,7 @@ Email: [matthew.shane.rogers@gmail.com](matthew.shane.rogers@gmail.com)
 
 Code template provided by Trilogy Education 
 
-<!-- Thanks to [Elma Gonzalez](https://github.com/eyl91?tab=stars), [Steven Landgraf](https://www.linkedin.com/in/slandgra/), [Steven Jirjis](https://www.linkedin.com/in/stevenjirjis/),[Tim Sanders](https://github.com/tbsanders5), [Aaron Platt](https://github.com/aaronkplatt)A for troubleshooting and debugging assistance. -->
+Thanks to [Steven Jirjis](https://www.linkedin.com/in/stevenjirjis/), [Chris Stead](https://github.com/cmstead), and [Andrew Kil](https://github.com/andrew-kil) for troubleshooting and debugging assistance.
 
 ## Licenses
 Licensed under the GNU General Public License v3.0,MIT License lincense(s).

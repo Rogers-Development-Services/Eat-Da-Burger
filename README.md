@@ -1,6 +1,6 @@
 # EAT-DA-BURGER
 
-![License: MIT](https://img.shields.io/badge/license-MIT%20License-blue.svg) ![badge: Made With-JavaScript](https://img.shields.io/badge/Made%20With-JavaScript-Yellow)! ![badge: Uses-express-handlebars](https://img.shields.io/badge/Uses-express--handlebars-red) ![badge: Uses-MySQL](https://img.shields.io/badge/Uses-MySQL-orange)
+![License: MIT](https://img.shields.io/badge/license-MIT%20License-blue.svg) ![badge: Made With-JavaScript](https://img.shields.io/badge/Made%20With-JavaScript-Yellow) ![badge: Uses-express-handlebars](https://img.shields.io/badge/Uses-express--handlebars-red) ![badge: Uses-MySQL](https://img.shields.io/badge/Uses-MySQL-orange)
 
 This Heroku DB application wil create a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). (It is designed via the MVC design pattern)
 
